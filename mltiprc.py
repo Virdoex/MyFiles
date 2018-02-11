@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import socket
 import multiprocessing
-
+import sys
 def handle(connection,address):
 	import logging
 	logging.basicConfig(level=logging.DEBUG)
@@ -44,7 +44,7 @@ class Server(object):
 if __name__ == "__main__" :
 	import logging
 	logging.basicConfig(level=logging.DEBUG)
-	server = Server("0.0.0.0",123)
+	server = Server("sys.argv[1]",123)
 	try :
 		logging.info("Listening for the client")
 		server.start()
